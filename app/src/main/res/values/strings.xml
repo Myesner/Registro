@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Registro</string>
+    <string name="agregar_gasto">Agregar Gasto</string>
+    <string name="total_mensual_gastado_0">Total mensual gastado: $0</string>
+    <string name="fecha_dd_mm_yyyy">Fecha (dd/mm/yyyy)</string>
+    <string name="ingrese_el_gasto">Ingrese el gasto</string>
+</resources>

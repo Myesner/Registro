@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etFecha"
+        android:layout_width="256dp"
+        android:layout_height="59dp"
+        android:autofillHints=""
+        android:hint="@string/fecha_dd_mm_yyyy"
+        android:inputType="datetime"
+        android:textColorHint="#8D6E63" />
+
+    <EditText
+        android:id="@+id/etGasto"
+        android:layout_width="254dp"
+        android:layout_height="68dp"
+        android:autofillHints=""
+        android:hint="@string/ingrese_el_gasto"
+        android:inputType="number"
+        android:textColorHint="#8D6E63" />
+
+    <Button
+        android:id="@+id/btnagregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregar_gasto" />
+
+    <ListView
+        android:id="@+id/ListVDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/TvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_mensual_gastado_0"
+        />
+
+
+</LinearLayout>
