@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnA;
     private ListView ListV;
     private TextView Total;
-    private ArrayList<String> expenses;
+    private ArrayList<String> listaD;
     private ArrayAdapter<String> adapter;
-    private double totalExpenses = 0;
+    private double totalmonto = 0;
 
 
 
@@ -40,29 +40,24 @@ public class MainActivity extends AppCompatActivity {
         ListV = findViewById(R.id.ListVDatos);
         Total = findViewById(R.id.TvTotal);
 
-        expenses = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, expenses);
+        listaD = new ArrayList<>();
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaD);
         ListV.setAdapter(adapter);
 
-        btnA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addExpense();
-
-            }
-        });
+        btnA.setOnClickListener(view -> addExpense());
 
     }
 
 
     private void addExpense() {
-        String expenseText = etGasto.getText().toString().trim();
+        String monto = etGasto.getText().toString().trim();
         String fecha = etFecha.getText().toString().trim();
-        if (!expenseText.isEmpty() || !fecha.isEmpty()) {
-            double expenseAmount = Double.parseDouble(expenseText);
-            totalExpenses += expenseAmount;
-            expenses.add(fecha + "\n" + "$" + expenseAmount);
+        if (!monto.isEmpty() || !fecha.isEmpty()) {
+            double Monto = Double.parseDouble(monto);
+            totalmonto += Monto ;
+            listaD.add(fecha + "\n" + "$" +Monto);
             adapter.notifyDataSetChanged();
+            etFecha.requestFocus();
             etFecha.setText("");
             etGasto.setText("");
             updateTotalExpense();
@@ -70,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
         private void updateTotalExpense () {
-            Total.setText("Total mensual gastado: $" + totalExpenses);
+            Total.setText("Total mensual gastado: $" + totalmonto);
         }
 
 
